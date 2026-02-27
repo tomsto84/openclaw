@@ -1,0 +1,154 @@
+{
+  "_comment": "=============================================================================",
+  "_comment": "OpenClaw Configuration File",
+  "_comment": "=============================================================================",
+  "_comment": "This is an EXAMPLE configuration file. Copy to openclaw.json and fill in",
+  "_comment": "your actual values. NEVER commit openclaw.json to version control.",
+  "_comment": "",
+  "_comment": "Security Notes:",
+  "_comment": "  - All tokens, API keys, and credentials should be kept secret",
+  "_comment": "  - Use environment variables for CI/CD environments",
+  "_comment": "  - Rotate tokens immediately if accidentally committed",
+  "_comment": "",
+  "_comment": "Documentation: https://docs.openclaw.ai/configuration",
+  "_comment": "=============================================================================",
+
+  "meta": {
+    "_comment": "Metadata - Auto-updated by OpenClaw",
+    "lastTouchedVersion": "2026.2.6-3",
+    "lastTouchedAt": "2026-02-26T22:50:32.697Z"
+  },
+
+  "agents": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Agent Configuration",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Controls how agents behave, concurrency limits, and default models.",
+    "_comment": "",
+    "defaults": {
+      "_comment": "Default settings for all agents",
+      "maxConcurrent": 4,
+      "subagents": {
+        "_comment": "Settings specific to sub-agent spawning",
+        "maxConcurrent": 8
+      },
+      "workspace": "/Users/openclaw/.openclaw/workspace",
+      "models": {
+        "_comment": "Available model definitions with aliases",
+        "kimi-coding/k2p5": {
+          "alias": "Kimi K2.5"
+        }
+      },
+      "model": {
+        "_comment": "Default model selection",
+        "primary": "kimi-coding/k2p5"
+      }
+    }
+  },
+
+  "messages": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Messaging Behavior",
+    "_comment": "------------------------------------------------------------------------",
+    "ackReactionScope": "group-mentions"
+  },
+
+  "commands": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Command Handling",
+    "_comment": "------------------------------------------------------------------------",
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+
+  "plugins": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Plugin Configuration",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Each plugin has its own configuration section.",
+    "_comment": "Enabled plugins are loaded at startup.",
+    "entries": {
+      "kimi-claw": {
+        "_comment": "Kimi Claw Extension - Bridge to Kimi AI",
+        "enabled": true,
+        "config": {
+          "bridge": {
+            "_comment": "Bridge authentication token - KEEP SECRET",
+            "_comment": "Generate via: openclaw bridge token create",
+            "token": "YOUR_BRIDGE_TOKEN_HERE",
+            "promptTimeoutMs": 1800000
+          }
+        }
+      },
+      "telegram": {
+        "_comment": "Telegram Bot Integration",
+        "enabled": true
+      }
+    }
+  },
+
+  "gateway": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Gateway Server Configuration",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Controls the HTTP/WebSocket server for external integrations.",
+    "mode": "local",
+    "auth": {
+      "_comment": "Gateway authentication - KEEP SECRET",
+      "mode": "token",
+      "token": "YOUR_GATEWAY_TOKEN_HERE"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "_comment": "Tailscale VPN integration (optional)",
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+
+  "auth": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Authentication Profiles",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Define how to authenticate with various AI providers.",
+    "profiles": {
+      "kimi-coding:default": {
+        "provider": "kimi-coding",
+        "mode": "api_key"
+      }
+    }
+  },
+
+  "channels": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Channel Integrations",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Configure messaging platforms (Telegram, Discord, etc.)",
+    "telegram": {
+      "enabled": true,
+      "_comment": "Bot token from @BotFather - KEEP SECRET",
+      "botToken": "YOUR_TELEGRAM_BOT_TOKEN_HERE"
+    }
+  },
+
+  "skills": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Skill Management",
+    "_comment": "------------------------------------------------------------------------",
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+
+  "wizard": {
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Setup Wizard State",
+    "_comment": "------------------------------------------------------------------------",
+    "_comment": "Tracks when the setup wizard was last run.",
+    "lastRunAt": "2026-02-26T22:50:32.677Z",
+    "lastRunVersion": "2026.2.6-3",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  }
+}
