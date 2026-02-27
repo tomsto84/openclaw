@@ -1,63 +1,309 @@
-# OpenClaw Workspace Gitignore
+# =============================================================================
+# OpenClaw Workspace - .gitignore
+# =============================================================================
+# This file defines intentionally untracked files that Git should ignore.
+# 
+# Principles:
+#   1. NEVER commit credentials, tokens, or private keys
+#   2. NEVER commit generated/cache files (reproducible from source)
+#   3. NEVER commit OS/editor-specific files (personal preference)
+#   4. ALWAYS document WHY something is ignored
+#
+# For OpenClaw-specific patterns, see "Project" section at the bottom.
+# =============================================================================
 
-# Sensitive config
-*.json.bak*
+
+# =============================================================================
+# 🔐 SECURITY - Credentials & Secrets (CRITICAL)
+# =============================================================================
+# These files contain sensitive data that could compromise security if leaked.
+# If you accidentally commit these, ROTATE THE CREDENTIALS IMMEDIATELY.
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example              # Allow example files for documentation
+.envrc                     # direnv
+*.secret
+*.secrets
+
+# Cryptographic keys
 *.key
 *.pem
-.env
-.env.local
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.priv
+*.private
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
 
-# System files
+# API keys & tokens (common filenames)
+*apikey*
+*api-key*
+*token*
+*secret*
+*password*
+*credential*
+
+# Configuration backups (may contain secrets)
+*.json.bak
+*.json.bak.*
+*.bak
+*.backup
+
+
+# =============================================================================
+# 💻 OS Generated Files
+# =============================================================================
+# Files automatically created by operating systems. Not relevant to the project.
+
+# macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
 .CFUserTextEncoding
-.zsh_sessions/
 
-# Cache & temp
-*.tmp
-*.cache
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+
+# =============================================================================
+# 📝 Editor & IDE Files
+# =============================================================================
+# Personal editor configuration. Each developer may use different tools.
+
+# VS Code
+.vscode/*
+!.vscode/settings.json      # Share workspace settings
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (IntelliJ, WebStorm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Vim/Neovim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+*.vim
+
+# Emacs
+*~
+\#*\#
+\.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+
+# =============================================================================
+# 🗑️ Logs, Temp & Cache Files
+# =============================================================================
+# Generated during runtime. Can be reproduced or are transient.
+
+# Logs
 *.log
+*.log.*
+logs/
+log/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Cache directories (varies by tool)
+.cache/
+*.cache
+
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.yarn
 
-# Large/binary files (optional - remove if you want to track)
-# *.png
-# *.jpg
-# *.gif
-# *.pdf
-# *.zip
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
 
-# Obsidian (if using sync separately)
-.obsidian/workspace.json
-.obsidian/graph.json
 
-# Nested git repositories (submodules)
-/openclaw/
-# /workspace/.git  # Commenté - on track le workspace directement
-/.openclaw/
-# workspace/       # Commenté - on track le workspace directement
+# =============================================================================
+# 📦 Package Manager Files
+# =============================================================================
+# Lock files should typically be committed, but package downloads should not.
 
-# Session files (contain sensitive data)
+# npm/yarn (keep lock files, ignore node_modules)
+# Note: package-lock.json and yarn.lock SHOULD be committed
+
+# Python
+*.egg
+pip-wheel-metadata/
+*.whl
+
+
+# =============================================================================
+# 🧪 Testing & Coverage
+# =============================================================================
+# Test artifacts and coverage reports (generated, not source).
+
+# Coverage
+coverage/
+.coverage
+.coverage.*
+htmlcov/
+*.lcov
+
+# Test output
+test-results/
+junit.xml
+
+
+# =============================================================================
+# 🎯 PROJECT SPECIFIC - OpenClaw Workspace
+# =============================================================================
+# Patterns specific to this OpenClaw installation.
+
+# ---------------------------------------------------------------------------
+# OpenClaw Configuration & Data
+# ---------------------------------------------------------------------------
+
+# Session files - CONTAIN SENSITIVE DATA (tokens, conversation history)
+# These are personal to each OpenClaw installation
 agents/main/sessions/*.jsonl
-agents/main/sessions/*.lock
+agents/main/sessions/*.jsonl.lock
+agents/*/sessions/*.jsonl
+agents/*/sessions/*.jsonl.lock
+
+# Device identity - UNIQUE per installation
 identity/device-auth.json
 identity/device.json
 plugins/*/device.json
 
-# Browser data
+# Browser automation data - LARGE and PERSONAL
+# Contains cookies, cache, local storage from browser sessions
 browser/openclaw/user-data/
+browser/*/user-data/
 
-# Binary/cache files
+# ---------------------------------------------------------------------------
+# Obsidian Vault (if using separately)
+# ---------------------------------------------------------------------------
+# Obsidian workspace settings are personal, but notes are shared
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/plugins/
+
+# ---------------------------------------------------------------------------
+# Cron & Runtime Data
+# ---------------------------------------------------------------------------
+# Job execution logs may contain sensitive output
+cron/runs/*.jsonl
+cron/runs/*.log
+
+# ---------------------------------------------------------------------------
+# Binary & Cache Files (Large/Reproducible)
+# ---------------------------------------------------------------------------
+# Chrome/Chromium caches
 *.pma
 *.db
 *.db-journal
-*.pb
-*.tflite
-*.gz
-Cache/
-cache/
-Cache_Data/
-Code\ Cache/
-GPUCache/
-ShaderCache/
-Session\ Storage/
-Local\ Storage/
+*.db-wal
+*.db-shm
 
+# ML models (large binaries)
+*.pb                    # Protocol Buffers
+*.tflite               # TensorFlow Lite models
+*.onnx
+*.mlmodel
+
+# Compression artifacts
+*.gz
+*.br
+*.zst
+
+# Chrome-specific cache paths (with spaces, escaped)
+**/Cache/
+**/cache/
+**/Cache_Data/
+**/Code?Cache/
+**/GPUCache/
+**/ShaderCache/
+**/Session?Storage/
+**/Local?Storage/
+**/Service?Worker/
+
+# ---------------------------------------------------------------------------
+# Nested Git Repositories (to prevent accidental submodule creation)
+# ---------------------------------------------------------------------------
+# If these exist, they should be separate repos or submodules explicitly
+/openclaw/
+/.openclaw/
+
+# ---------------------------------------------------------------------------
+# Legacy / Migration
+# ---------------------------------------------------------------------------
+# Old patterns kept temporarily during migration
+.zsh_sessions/
+
+
+# =============================================================================
+# 🚫 NEVER IGNORE (Exceptions)
+# =============================================================================
+# These patterns override ignores above. Use with caution.
+
+# Keep example/placeholder files
+!*.example
+!*.template
+!*.sample
+
+# Keep empty directory markers
+!.gitkeep
+!.keep
+
+
+# =============================================================================
+# 📚 References
+# =============================================================================
+# GitHub's collection: https://github.com/github/gitignore
+# Git docs: https://git-scm.com/docs/gitignore
+#
+# To check if a file is ignored: git check-ignore -v <file>
+# To see all ignored files: git status --ignored
+# =============================================================================
