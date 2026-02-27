@@ -37,29 +37,58 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
-## GitHub Auto-Sync
+## GitHub Workflow - Feature Branches
 
-Le workspace est synchronisé automatiquement avec GitHub.
+**Repo:** https://github.com/tomsto84/openclaw
 
-- **Repo:** https://github.com/tomsto84/openclaw
-- **Fréquence:** Toutes les 5 minutes
-- **Process:** 
-  - Détecte les changements locaux
-  - Crée une branche `auto-sync-YYYYMMDD-HHMMSS`
-  - Commit + Push
-  - Crée une PR
-  - Merge automatique (squash)
-  - Supprime la branche
+### Workflow conventionnel
 
-### Commandes manuelles
+Pas de sync auto. On travaille sur des branches de feature qu'on merge quand c'est prêt.
 
 ```bash
-# Forcer un sync maintenant
-~/workspace/scripts/sync-now.sh
+# 1. Créer une branche pour une feature
+~/workspace/scripts/git-workflow.sh branch feat/nom-de-la-feature
 
-# Voir le statut git
-cd ~/.openclaw && git status
+# 2. Travailler... puis commit
+~/workspace/scripts/git-workflow.sh commit "message du commit"
+
+# 3. Push et créer PR
+~/workspace/scripts/git-workflow.sh done
+
+# 4. Merger quand c'est prêt (ou décider ensemble)
+~/workspace/scripts/git-workflow.sh merge
 ```
+
+### Commandes disponibles
+
+| Commande | Description |
+|----------|-------------|
+| `branch feat/xxx` | Crée une branche feature |
+| `branch fix/xxx` | Crée une branche fix |
+| `branch chore/xxx` | Crée une branche chore |
+| `commit "msg"` | Commit les changements |
+| `push` | Push la branche |
+| `pr` | Crée une PR |
+| `merge` | Merge la branche sur main |
+| `sync` | Rebase sur main |
+| `done` | Commit + push + PR |
+| `status` | Statut git |
+
+### Règles de nommage
+
+- `feat/description` - Nouvelle fonctionnalité
+- `fix/description` - Correction de bug
+- `chore/description` - Tâches de maintenance
+- `docs/description` - Documentation
+- `refactor/description` - Refactoring
+
+---
+
+## GitHub Auto-Sync (OLD - Disabled)
+
+~~Le workspace est synchronisé automatiquement avec GitHub.~~ **DÉSACTIVÉ**
+
+Utiliser le workflow feature branches ci-dessus.
 
 ---
 
