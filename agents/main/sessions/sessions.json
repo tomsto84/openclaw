@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "ff9ad9f4-ddbc-4743-b629-b32390d2fa50",
-    "updatedAt": 1772198540125,
+    "updatedAt": 1772198671951,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -95,15 +95,15 @@
     "authProfileOverride": "kimi-coding:default",
     "authProfileOverrideSource": "auto",
     "authProfileOverrideCompactionCount": 0,
-    "inputTokens": 113,
-    "outputTokens": 118,
-    "totalTokens": 36465,
+    "inputTokens": 417,
+    "outputTokens": 474,
+    "totalTokens": 40609,
     "modelProvider": "kimi-coding",
     "model": "k2p5",
     "contextTokens": 262144,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772198435989,
+      "generatedAt": 1772198540141,
       "sessionId": "ff9ad9f4-ddbc-4743-b629-b32390d2fa50",
       "sessionKey": "agent:main:main",
       "provider": "kimi-coding",
@@ -115,8 +115,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 25591,
-        "projectContextChars": 13886,
+        "chars": 25581,
+        "projectContextChars": 13876,
         "nonProjectContextChars": 11705
       },
       "injectedWorkspaceFiles": [
@@ -140,8 +140,8 @@
           "name": "TOOLS.md",
           "path": "/Users/openclaw/.openclaw/workspace/TOOLS.md",
           "missing": false,
-          "rawChars": 1371,
-          "injectedChars": 1371,
+          "rawChars": 1361,
+          "injectedChars": 1361,
           "truncated": false
         },
         {
