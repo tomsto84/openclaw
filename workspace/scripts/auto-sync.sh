@@ -4,7 +4,7 @@
 set -e
 
 REPO_DIR="/Users/openclaw/.openclaw"
-REPO="tomsto84/openclaw-workspace"
+REPO="tomsto84/openclaw"
 BRANCH_PREFIX="auto-sync"
 
 cd "$REPO_DIR"
