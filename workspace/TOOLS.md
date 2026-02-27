@@ -41,7 +41,7 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Le workspace est synchronisé automatiquement avec GitHub.
 
-- **Repo:** https://github.com/tomsto84/openclaw-workspace
+- **Repo:** https://github.com/tomsto84/openclaw
 - **Fréquence:** Toutes les 5 minutes
 - **Process:** 
   - Détecte les changements locaux
