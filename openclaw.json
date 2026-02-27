@@ -1,21 +1,9 @@
 {
-  "_comment": "=============================================================================",
-  "_comment": "OpenClaw Configuration",
-  "_comment": "=============================================================================",
-  "_comment": "WARNING: This file contains SENSITIVE DATA (tokens, API keys).",
-  "_comment": "- Never commit this file to version control",
-  "_comment": "- Use openclaw.json.example as a template",
-  "_comment": "- Rotate tokens immediately if leaked",
-  "_comment": "=============================================================================",
-
   "meta": {
-    "_comment": "Auto-updated by OpenClaw on configuration changes",
     "lastTouchedVersion": "2026.2.6-3",
     "lastTouchedAt": "2026-02-26T22:50:32.697Z"
   },
-
   "agents": {
-    "_comment": "Agent behavior and concurrency settings",
     "defaults": {
       "maxConcurrent": 4,
       "subagents": {
@@ -23,7 +11,6 @@
       },
       "workspace": "/Users/openclaw/.openclaw/workspace",
       "models": {
-        "_comment": "Model aliases for easier reference",
         "kimi-coding/k2p5": {
           "alias": "Kimi K2.5"
         }
@@ -33,58 +20,43 @@
       }
     }
   },
-
   "messages": {
-    "_comment": "Reaction scope for acknowledgment messages",
     "ackReactionScope": "group-mentions"
   },
-
   "commands": {
-    "_comment": "Command handling mode: 'auto' detects platform capabilities",
     "native": "auto",
     "nativeSkills": "auto"
   },
-
   "plugins": {
-    "_comment": "Plugin configurations - each plugin defines its own schema",
     "entries": {
       "kimi-claw": {
-        "_comment": "Kimi Claw Extension - enables Kimi AI integration",
         "enabled": true,
         "config": {
           "bridge": {
-            "_comment": "Bridge token for Kimi extension authentication",
             "token": "sk-U6E7S7J4LY4QFGUEATQPI7ZE52",
             "promptTimeoutMs": 1800000
           }
         }
       },
       "telegram": {
-        "_comment": "Telegram bot integration",
         "enabled": true
       }
     }
   },
-
   "gateway": {
-    "_comment": "HTTP/WebSocket server for external integrations",
     "mode": "local",
     "auth": {
-      "_comment": "Gateway authentication token - protect this value",
       "mode": "token",
       "token": "aeb7cafa9151f16e49a382ce03c52e1845a5d1460ee8e1c6"
     },
     "port": 18789,
     "bind": "loopback",
     "tailscale": {
-      "_comment": "Tailscale VPN - off for local-only mode",
       "mode": "off",
       "resetOnExit": false
     }
   },
-
   "auth": {
-    "_comment": "AI provider authentication profiles",
     "profiles": {
       "kimi-coding:default": {
         "provider": "kimi-coding",
@@ -92,25 +64,18 @@
       }
     }
   },
-
   "channels": {
-    "_comment": "Messaging platform integrations",
     "telegram": {
       "enabled": true,
-      "_comment": "Telegram bot token - obtained from @BotFather",
       "botToken": "8555019926:AAEeQPYB6WdcXkhEtymyoJSG5TEOgv3ZYqA"
     }
   },
-
   "skills": {
-    "_comment": "Skill package manager configuration",
     "install": {
       "nodeManager": "npm"
     }
   },
-
   "wizard": {
-    "_comment": "Setup wizard tracking - helps with updates",
     "lastRunAt": "2026-02-26T22:50:32.677Z",
     "lastRunVersion": "2026.2.6-3",
     "lastRunCommand": "onboard",

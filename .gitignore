@@ -277,14 +277,10 @@ cron/runs/*.log
 /.openclaw/
 
 # ---------------------------------------------------------------------------
-# OpenClaw Configuration - CONTAINS SECRETS
-# Main configuration file contains sensitive tokens and API keys
-openclaw.json
-!openclaw.json.example          # Keep example/template
-openclaw.json.bak
-openclaw.json.bak.*
-
-# Legacy backup files (may contain old secrets)
+# Legacy / Migration
+# ---------------------------------------------------------------------------
+# Old patterns kept temporarily during migration
+.zsh_sessions/
 
 
 # =============================================================================
