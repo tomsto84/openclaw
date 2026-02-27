@@ -1,0 +1,92 @@
+{
+  "907ce73017237f91f9e752390166315a544da1eb369af7ea6d10334b8e727362": {
+    "deviceId": "907ce73017237f91f9e752390166315a544da1eb369af7ea6d10334b8e727362",
+    "publicKey": "NPBpE9C7Y2SXrA6qEx5jVLjK0DRkF0Dj_KHsdv92b-I",
+    "displayName": "kimi-bridge-connector",
+    "platform": "darwin",
+    "clientId": "gateway-client",
+    "clientMode": "backend",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "3971ab45c0e44ed88bf0b108baa0f5cf",
+        "role": "operator",
+        "scopes": [
+          "operator.admin"
+        ],
+        "createdAtMs": 1772146244494
+      }
+    },
+    "createdAtMs": 1772146244494,
+    "approvedAtMs": 1772146244494
+  },
+  "72f26ff835883d94279cd010b2c3707136a47a34cef5d1057e1f5fc9be7ae0b7": {
+    "deviceId": "72f26ff835883d94279cd010b2c3707136a47a34cef5d1057e1f5fc9be7ae0b7",
+    "publicKey": "LmUgWRIYL8lLxFAq1I2Uq5aR1sh20GPkZHKnnl7wsO8",
+    "platform": "darwin",
+    "clientId": "gateway-client",
+    "clientMode": "backend",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin",
+      "operator.approvals",
+      "operator.pairing"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "f4ade42ac16744e5bc98804b30122fbd",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing"
+        ],
+        "createdAtMs": 1772146244556,
+        "lastUsedAtMs": 1772148242697
+      }
+    },
+    "createdAtMs": 1772146244556,
+    "approvedAtMs": 1772146244556,
+    "displayName": "agent"
+  },
+  "c3f7b963af217396207bddf98a697d905e80968aa3834f1ec7075df4339793ab": {
+    "deviceId": "c3f7b963af217396207bddf98a697d905e80968aa3834f1ec7075df4339793ab",
+    "publicKey": "XOWes4RHhGLyeFw4W6hqE2JapytG0w318VOthGeZbDM",
+    "platform": "MacIntel",
+    "clientId": "openclaw-control-ui",
+    "clientMode": "webchat",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin",
+      "operator.approvals",
+      "operator.pairing"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "a3e38c8bd0ca4b54804e4df30400443b",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing"
+        ],
+        "createdAtMs": 1772146390732,
+        "lastUsedAtMs": 1772197312667
+      }
+    },
+    "createdAtMs": 1772146390732,
+    "approvedAtMs": 1772146390732
+  }
+}

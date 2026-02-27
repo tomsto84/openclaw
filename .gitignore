@@ -28,3 +28,36 @@ node_modules/
 # Obsidian (if using sync separately)
 .obsidian/workspace.json
 .obsidian/graph.json
+
+# Nested git repositories (submodules)
+/openclaw/
+/workspace/.git
+/.openclaw/
+workspace/
+
+# Session files (contain sensitive data)
+agents/main/sessions/*.jsonl
+agents/main/sessions/*.lock
+identity/device-auth.json
+identity/device.json
+plugins/*/device.json
+
+# Browser data
+browser/openclaw/user-data/
+
+# Binary/cache files
+*.pma
+*.db
+*.db-journal
+*.pb
+*.tflite
+*.gz
+Cache/
+cache/
+Cache_Data/
+Code\ Cache/
+GPUCache/
+ShaderCache/
+Session\ Storage/
+Local\ Storage/
+
