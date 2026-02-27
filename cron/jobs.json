@@ -1,36 +1,4 @@
 {
   "version": 1,
-  "jobs": [
-    {
-      "id": "6d45b7bd-3c3d-4a84-bc1b-ccb1b7d1ed1f",
-      "agentId": "main",
-      "name": "auto-sync-executor",
-      "enabled": true,
-      "createdAtMs": 1772197926493,
-      "updatedAtMs": 1772198240561,
-      "schedule": {
-        "everyMs": 300000,
-        "kind": "every",
-        "anchorMs": 1772197926493
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Exécute le script de sync GitHub: /Users/openclaw/.openclaw/workspace/scripts/auto-sync.sh\n\nSi le script échoue ou s'il n'y a pas de changements, rapporte simplement le statut silencieusement.\nSi le sync réussit, confirme avec l'URL de la PR mergée.",
-        "model": "kimi-coding/k2p5",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772198526493,
-        "lastRunAtMs": 1772198226503,
-        "lastStatus": "ok",
-        "lastDurationMs": 14058,
-        "runningAtMs": 1772198526499
-      }
-    }
-  ]
+  "jobs": []
 }

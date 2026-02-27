@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "ff9ad9f4-ddbc-4743-b629-b32390d2fa50",
-    "updatedAt": 1772198490482,
+    "updatedAt": 1772198540125,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -433,7 +433,11 @@
         }
       ],
       "version": 0
-    }
+    },
+    "modelProvider": "kimi-coding",
+    "inputTokens": 493,
+    "outputTokens": 156,
+    "totalTokens": 11501
   },
   "agent:main:cron:6d45b7bd-3c3d-4a84-bc1b-ccb1b7d1ed1f:run:7e84cc7e-ddbb-400b-8cc1-985091280f41": {
     "sessionId": "7e84cc7e-ddbb-400b-8cc1-985091280f41",
@@ -603,6 +607,10 @@
         }
       ],
       "version": 0
-    }
+    },
+    "modelProvider": "kimi-coding",
+    "inputTokens": 493,
+    "outputTokens": 156,
+    "totalTokens": 11501
   }
 }
