@@ -28,7 +28,8 @@
         "nextRunAtMs": 1772198526493,
         "lastRunAtMs": 1772198226503,
         "lastStatus": "ok",
-        "lastDurationMs": 14058
+        "lastDurationMs": 14058,
+        "runningAtMs": 1772198526499
       }
     }
   ]
