@@ -31,9 +31,9 @@ node_modules/
 
 # Nested git repositories (submodules)
 /openclaw/
-/workspace/.git
+# /workspace/.git  # Commenté - on track le workspace directement
 /.openclaw/
-workspace/
+# workspace/       # Commenté - on track le workspace directement
 
 # Session files (contain sensitive data)
 agents/main/sessions/*.jsonl
