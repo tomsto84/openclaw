@@ -1,0 +1,30 @@
+# OpenClaw Workspace Gitignore
+
+# Sensitive config
+*.json.bak*
+*.key
+*.pem
+.env
+.env.local
+
+# System files
+.DS_Store
+.CFUserTextEncoding
+.zsh_sessions/
+
+# Cache & temp
+*.tmp
+*.cache
+*.log
+node_modules/
+
+# Large/binary files (optional - remove if you want to track)
+# *.png
+# *.jpg
+# *.gif
+# *.pdf
+# *.zip
+
+# Obsidian (if using sync separately)
+.obsidian/workspace.json
+.obsidian/graph.json
