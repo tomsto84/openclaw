@@ -190,27 +190,21 @@ merge_branch() {
         exit 1
     fi
     
-    echo -e "${YELLOW}⚠️ About to merge '$branch' to main${NC}"
+    echo -e "${BLUE}🔄 Auto-merging '$branch' to main${NC}"
     echo ""
     echo "Commits to be merged:"
     git log main..HEAD --oneline --no-decorate | sed 's/^/  /'
     echo ""
-    read -rp "Continue with merge? [y/N] " confirm
-    
-    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
-        echo -e "${YELLOW}❌ Merge cancelled${NC}"
-        exit 0
-    fi
     
     # Push first
     git push origin "$branch"
     
-    # Create PR and merge
+    # Create PR and auto-merge
     local title=$(git log -1 --pretty=%s)
-    local pr_url=$(gh pr create --repo "$REPO" --title "$title" --body "Ready to merge $branch" --base main --head "$branch")
+    local pr_url=$(gh pr create --repo "$REPO" --title "$title" --body "🤖 Auto-merge $branch" --base main --head "$branch")
     local pr_number=$(echo "$pr_url" | grep -oE '[0-9]+$')
     
-    echo -e "${BLUE}🔄 Merging PR #$pr_number...${NC}"
+    echo -e "${BLUE}🔄 Squash merging PR #$pr_number...${NC}"
     gh pr merge "$pr_number" --repo "$REPO" --squash --delete-branch
     
     # Switch back to main
